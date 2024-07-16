@@ -1,5 +1,10 @@
 # MM_ErrorBand
 
+PreReqs:
+  NUISANCE: https://github.com/NUISANCEMC/nuisance
+  NUSYSTEMATICS with ImprovedSpline Branch: 
+
+
 First step:
 
 Located setup.sh and link 
