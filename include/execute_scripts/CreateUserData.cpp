@@ -28,13 +28,5 @@ void CreateUserData(std::string desired_file){
     UD << "    genie_tune_name: \"${GENIE_XSEC_TUNE}\"" << std::endl;
     UD << "    ignore_parameter_dependence: true" << std::endl;
     UD << "]" << std::endl;
-    UD << "DESRIED_SYTEMATICS_FOR_TESTING[" << std::endl;
-    UD << "" << std::endl;
-    UD << "]" << std::endl;
-    UD << "DESIRED_EVENT_PROPERTY[" << std::endl;
-    UD << "]" << std::endl;
-    UD << "FLAG: " << std::endl;
-    UD << "DESIRED_DATA_DRAW_AGAINST: " << std::endl;
-    UD << "DESIRED_EXPERIMENTAL_FLAG_OR_PATH: " << std::endl;
     UD.close();
 }
