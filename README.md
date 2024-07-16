@@ -6,7 +6,7 @@ Located setup.sh and link
   
     export MM_ERROR=$pwd
 
-source setup.sh
+save then source setup.sh
 
 To generate a Config file for initalization:
   
