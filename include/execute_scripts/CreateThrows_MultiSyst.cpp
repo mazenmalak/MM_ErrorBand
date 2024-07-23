@@ -179,5 +179,5 @@ void CreateThrows_MultiSyst(std::string userdata, std::string fcl_file, std::str
     std::cout << "TIME!!!!" << std::endl;
     std::cout << "TIME FOR THROWS ---> " << sw.CpuTime() << std::endl;
 
-    std::system(Form("nuiscomp -c MultiSig.xml -o ExperimentalFlags.root -n %d", num_of_events));
+    //std::system(Form("nuiscomp -c MultiSig.xml -o ExperimentalFlags.root -n %d", num_of_events));
 }
