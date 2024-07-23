@@ -76,7 +76,7 @@ void CreateThrows_MultiSyst(std::string userdata, std::string fcl_file, std::str
                 //std::cout << syst_name[syst] << std::endl;
                 systtools::event_unit_response_t Events_stand = resp->GetEventResponses(event);
                 temp_spline_vec.push_back(resp->GetSpline(syst_id[syst], Events_stand));
-                std::cout << "at -1: " << temp_spline_vec[syst].Eval(-1.00) << " ---> and at 3.00: "<< temp_spline_vec[syst].Eval(3.00) << std::endl;
+                //std::cout << "at -1: " << temp_spline_vec[syst].Eval(-1.00) << " ---> and at 3.00: "<< temp_spline_vec[syst].Eval(3.00) << std::endl;
             }
             splines.push_back(temp_spline_vec);
         }
