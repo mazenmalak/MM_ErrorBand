@@ -1,0 +1,31 @@
+NUMBER_OF_EVENTS: 1000
+DRAW_SYSTEMATICS[
+	Throw_outputs/EmissShift_Throws.root{
+		Group_name: Emiss
+			Emiss_ShiftPeak_Ar_p,
+            		Emiss_ShiftPeak_Ar_n,
+            		Emiss_ShiftPeak_C_p,
+            		Emiss_ShiftPeak_C_n
+	}
+	Throw_outputs/FSI_Throws.root{
+		Group_name: FSI
+			FrAbs_pi,
+            		FrPiProd_pi,
+            		FrCEx_N,
+            		FrInel_N	
+	}
+]
+GROUPS[
+	Emiss
+	Emiss, FSI
+]
+DESIRED_EVENT_PROPERTY[
+	ELep[40,0,6000,]
+]
+TITLE_AND_AXIS_LABEL[
+	GENIE Comp: ELep, lepton Energy, Events
+]
+DESIRED_DATA_DRAW_AGAINST[
+	NEUT, MC_outputs/NEUT_1000_GenericFluxVectors.root
+]
+FLAG: flagCC0pi

@@ -1,0 +1,55 @@
+NUMBER_OF_EVENTS: 1000000
+DRAW_SYSTEMATICS[
+    /data/nuisance/mazen/HardoTrhows.root{   ##### Path to your Output Throws .root file #####
+        Group_name: FSI         	     ##### Group_name: (Desired Group Name) #####
+            FrAbs_pi,			     ##### List Desired Systematics for this Group #####
+            FrPiProd_pi,
+            MFP_pi,
+            FrCEx_pi,
+            FrInel_pi,
+            FrAbs_N,
+            FrPiProd_N,
+            MFP_N,
+            FrCEx_N,
+            FrInel_N
+    }
+    /data/nuisance/mazen/DirtCorrThrows.root{  ##### Same process as above #####
+        Group_name: Dirt2
+            Emiss_CorrTail_Ar_p,
+            Emiss_CorrTail_Ar_n,
+            Emiss_CorrTail_C_p,
+            Emiss_CorrTail_C_n
+    }
+    /data/nuisance/mazen/DirtLinearThrows.root{  ##### Same process as above #####
+        Group_name: Dirt2
+            Emiss_Linear_Ar_p,
+            Emiss_Linear_Ar_n,
+            Emiss_Linear_C_p,
+            Emiss_Linear_C_n
+    }
+    /data/nuisance/mazen/DirtShiftThrows.root{  ##### Same process as above #####
+        Group_name: Dirt2
+            Emiss_ShiftPeak_Ar_p,
+            Emiss_ShiftPeak_Ar_n,
+            Emiss_ShiftPeak_C_p,
+            Emiss_ShiftPeak_C_n
+    }
+]
+GROUPS[                 ##### List out any combination of Groups, Maximum of 3 errorbands and last one mentioned will be used to calculate chi-sqaure #####
+    Dirt2		##### Errorband 1 #####
+    FSI, Dirt2          ##### Errorband 2, Will use all listed systematics #####
+]
+DESIRED_EVENT_PROPERTY[
+    ELep[20,0,6000,]   									           ##### Kinematic_variable1[num_bins, min_x, max_x,]  #####
+    sqrt((hm_pprot_4mom.Px()+pmu_4mom.Px())**2+(hm_pprot_4mom.Py()+pmu_4mom.Py())**2)[40,0,600,]   ##### Kinetmaic_variable2[.....] #####
+]
+TITLE_AND_AXIS_LABEL[
+    GENIE Comparisons: Outgoing Lepton Energy, Energy (MeV), Events                                ##### For Kinematic variable1 --> Title, Xlabel, Ylabel ######
+    GENIE Comparisons: #delta p_{T} Transverse Momentum Imbalance, #delta p_{T} (MeV/c), Events    ##### For Kinematic variable2 #####
+]
+DESIRED_DATA_DRAW_AGAINST[ ##### Max 5 #####
+    NUET, /home/mazen_malak/Thesis_results/GENFILE/GenericFlux/NEUT_10E6_numu_ND_GenFlux.root            ##### ComparisonModel1, Path_to_GenericFluxVectors_Events ##### 
+    GENIE_18_10a_02_11b, /data/nuisance/mazen/GENIE/GenFlux/GENIE_G18_10a_02_11b_numu_flux_GENFLUX.root 
+    GENIE_21_11a_00_000, /data/nuisance/mazen/GENIE/GenFlux/GENIE_G21_11a_00_000_numu_flux_GENFLUX.root
+]
+FLAG:flagCC0pi   ##### Any Flag, if no flag is desired "NONE" #####

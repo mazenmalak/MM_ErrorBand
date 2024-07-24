@@ -1,0 +1,6 @@
+After setting up the setup.sh as in the README, Test the following commands:
+   MM_Init_Setup -i GENIE_SYST_Init/TestInitConfig.txt -f GENIE_SYST_Init/GENIE_Hadro.fcl --custom_fcl -n GENIE_SYST_Init/GENIENode.root -t 50 -o Throw_outputs/FSI_Throws.root
+   MM_Init_Setup -i Non_GENIE_SYST_Init/TestConfig_EmissShift.txt -f Non_GENIE_SYST_Init/DirtShift.fcl --custom_fcl -t 50 -n Non_GENIE_SYST_Init/EmissShift_nodes.root -o Throw_outputs/EmissShift_Throws.root
+
+Once the setups are done, go ahead and run draw step:
+   MM_New_Draw -i DrawSteps/DrawConfig.txt  -t 50 -o ElepDraw.root

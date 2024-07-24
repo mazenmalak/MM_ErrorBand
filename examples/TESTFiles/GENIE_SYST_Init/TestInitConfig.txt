@@ -1,0 +1,32 @@
+GENIE_FILE: MC_outputs/GENIE_Example_1000events.root
+GENIE_TUNE: G18_10a_02_11a
+NUMBER_OF_EVENTS: 1000
+ENGINE_TYPE: GENIEReWeight
+DESIRED_SYSTEMATCS_FOR_GENERATION[
+    FrAbs_pi,
+    FrPiProd_pi,
+    FrCEx_N,
+    FrInel_N
+]
+centralParamValue: 0
+PARAM_VARIATION[
+    -3,
+    -2,
+    -1,
+    0,
+    1,
+    2,
+    3,
+]
+TOOL_OPTIONS[
+    AxFFCCQEDipoleToZExp: false
+    CCRESIsShapeOnly: false
+    DISBYIsShapeOnly: false
+    MaCCQEIsShapeOnly: false
+    NCRESIsShapeOnly: false
+    UseFullHERG: true
+    evgen_list_name: ""
+    fill_valid_tree: false
+    genie_tune_name: "${GENIE_XSEC_TUNE}"
+    ignore_parameter_dependence: true
+]
