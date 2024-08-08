@@ -120,7 +120,7 @@ const std::string Get_Engine_Type(std::string file_path){
         bool grabbed_ENGINE=false;
         while(getline(file, temp)){
             if(temp.find("ENGINE_TYPE:") != std::string::npos){
-                ENGINE = RemoveHeader(temp, "ENGINE_TYPE: ");
+                ENGINE = RemoveHeader(temp, "ENGINE_TYPE:");
                 grabbed_ENGINE=true;
             }
             if(grabbed_ENGINE==true){
