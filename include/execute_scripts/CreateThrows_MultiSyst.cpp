@@ -163,9 +163,9 @@ void CreateThrows_MultiSyst(std::string userdata, std::string fcl_file, std::str
                 double param_value = random_param[isyst];
                 double weight = splines[event_num][isyst].Eval(param_value);
                 RWWeight=weight;
-                if(RWWeight!=1.0){
-                    std::cout << RWWeight << std::endl;
-                }
+                //if(RWWeight!=1.0){
+                //    std::cout << RWWeight << std::endl;
+                //}
                 throw_tree->Fill();
             }
         }
