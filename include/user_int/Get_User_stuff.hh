@@ -39,14 +39,14 @@ const std::vector<std::string> Get_Syst_name(std::string file_path){
         bool grabbed_first_brack=false;
         bool grabbed_last_brack=false;
         while(getline(file, temp)){
-            if(temp.find("DESIRED_SYSTEMATCS_FOR_GENERATION[") != std::string::npos){
+            if(temp.find("DESIRED_SYSTEMATICS_FOR_GENERATION[") != std::string::npos){
                 grabbed_first_brack=true;
             }
             if(grabbed_first_brack==true && temp=="]"){
                 grabbed_last_brack=true;
             }
             if(grabbed_first_brack==true && grabbed_last_brack==false){
-                if(temp.find("DESIRED_SYSTEMATCS_FOR_GENERATION[") == std::string::npos){
+                if(temp.find("DESIRED_SYSTEMATICS_FOR_GENERATION[") == std::string::npos){
                     vec.push_back(RemoveHeader(temp, ""));
                 }
             }
