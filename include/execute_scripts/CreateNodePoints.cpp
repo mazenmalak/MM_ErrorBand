@@ -44,19 +44,9 @@ void CreateNodePoints(std::string user_data, std::string fcl_file, std::string p
 
 
     ///Add a flag to check if this is a genie systematic or not 
-    std::fstream fcl_check; 
-    fcl_check.open(fcl_file, std::ios::in);
-    std::string string_temp;
-    int string_index=0;  
     bool is_genie_set=false;
-    while(getline(fcl_check, string_temp)){
-        if(string_index==1){
-            if(string_temp.find("    GENIEReWeight: {")  != std::string::npos){
-                is_genie_set=true;
-            }
-            break;
-        }
-        string_index++;
+    if(Get_Engine_Type(user_data)=="GENIEReWeight"){
+        is_genie_set=true;
     }
     if(is_genie_set==false){
         spline_output_file.Close();
